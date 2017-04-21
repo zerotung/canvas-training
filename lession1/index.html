@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lession1</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="400" height="400">
+  </canvas>
+  <script type="text/javascript">
+    window.addEventListener('load', function() {
+      canvasApp();
+    }, false);
+
+    function canvasSupport(e) {
+      return !!e.getContext;
+    }
+
+    function canvasApp() {
+      var myCanvas = document.getElementById('myCanvas');
+      if(!canvasSupport(myCanvas)) { return ; }
+      var ctx = myCanvas.getContext('2d');
+      
+      function drawScreen() {
+        ctx.fillStyle = '#f48';
+        ctx.fillRect(10, 10, 200, 200);
+      }
+      drawScreen();
+    }
+  </script>
+</body>
+</html>
